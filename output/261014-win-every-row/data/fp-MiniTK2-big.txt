@@ -1,0 +1,48 @@
+======================================================================
+MiniTK2 [41529]: 64-bit    Footprint: 294 MB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 155 MB        0 B          0 B          9    MALLOC_LARGE
+ 114 MB        0 B          0 B         50    MALLOC_SMALL
+8688 KB        0 B          0 B         21    Owned physical footprint (unmapped) (graphics)
+8448 KB        0 B      4224 KB         37    IOSurface
+2336 KB        0 B          0 B         13    MALLOC metadata
+1691 KB        0 B          0 B        868    __DATA_DIRTY
+1296 KB        0 B      6144 KB         51    IOAccelerator (graphics)
+ 897 KB        0 B          0 B        960    __DATA
+ 705 KB        0 B          0 B          1    page table
+ 368 KB        0 B          0 B         24    untagged (VM_ALLOCATE)
+ 320 KB        0 B          0 B         12    stack
+ 304 KB        0 B          0 B          1    MALLOC_TINY
+ 292 KB        0 B          0 B       2523    unused dyld shared cache area
+ 256 KB        0 B          0 B        626    __AUTH
+ 256 KB        0 B          0 B         15    CoreAnimation
+ 128 KB        0 B          0 B          1    Accelerate image backing stores
+ 112 KB        0 B          0 B       1011    __AUTH_CONST
+ 112 KB        0 B          0 B          2    __TPRO_CONST
+  96 KB        0 B          0 B          2    CoreUI image data
+  80 KB        0 B          0 B          5    CoreGraphics
+  64 KB        0 B          0 B          2    IOAccelerator
+  64 KB        0 B          0 B          4    IOKit
+  32 KB      16 KB          0 B       1018    __DATA_CONST
+  32 KB        0 B          0 B          1    Activity Tracing
+  16 KB        0 B        32 KB          2    Foundation
+  16 KB        0 B          0 B          1    MALLOC_NANO
+  16 KB        0 B          0 B          1    tag 22
+  16 KB        0 B          0 B          1    os_alloc_once
+  16 KB        0 B          0 B          1    ColorSync
+    0 B        0 B        11 MB         85    Owned physical footprint (unmapped)
+    0 B      21 MB          0 B         34    mapped file
+    0 B    1904 KB          0 B       1040    __TEXT
+    0 B      64 KB          0 B          5    __LINKEDIT
+    0 B        0 B          0 B          1    __FONT_DATA
+    0 B        0 B          0 B          1    __CTF
+    ---        ---          ---        ---    ---
+ 294 MB      23 MB        21 MB       8431    TOTAL
+
+Auxiliary data:
+    phys_footprint: 294 MB
+    phys_footprint_peak: 318 MB
+

@@ -1,0 +1,3391 @@
+{
+  "date": "2026-10-13 10:56",
+  "load": [
+    13.3564453125,
+    8.83740234375
+  ],
+  "rounds": 7,
+  "machine": "Apple M1 Ultra, macOS 26.5",
+  "apps": [
+    "Textee",
+    "TextMate",
+    "CotEditor",
+    "Sublime Text",
+    "TextEdit"
+  ],
+  "rows": [
+    {
+      "key": "open_one_ms",
+      "label": "Open 1 file in the running app",
+      "unit": "ms"
+    },
+    {
+      "key": "open_one_cpu",
+      "label": "CPU for that open",
+      "unit": "ms"
+    },
+    {
+      "key": "open_ten_ms",
+      "label": "Open 9 more files at once",
+      "unit": "ms"
+    },
+    {
+      "key": "launch_small_window",
+      "label": "Launch with a 2 KB file: window visible",
+      "unit": "ms"
+    },
+    {
+      "key": "launch_small_settle",
+      "label": "Launch with a 2 KB file: work done",
+      "unit": "ms"
+    },
+    {
+      "key": "launch_small_cpu",
+      "label": "CPU for that launch",
+      "unit": "ms"
+    },
+    {
+      "key": "launch_big_window",
+      "label": "Launch with a 22 MB file: window visible",
+      "unit": "ms"
+    },
+    {
+      "key": "launch_big_settle",
+      "label": "Launch with a 22 MB file: work done",
+      "unit": "ms"
+    },
+    {
+      "key": "launch_big_cpu",
+      "label": "CPU for the 22 MB file",
+      "unit": "ms"
+    },
+    {
+      "key": "launch_md_settle",
+      "label": "Launch with a 2 MB Markdown file: work done",
+      "unit": "ms"
+    },
+    {
+      "key": "launch_md_cpu",
+      "label": "CPU for the 2 MB Markdown file",
+      "unit": "ms"
+    },
+    {
+      "key": "mem_small",
+      "label": "Memory after launch, 1 file",
+      "unit": "MB"
+    },
+    {
+      "key": "mem_ten",
+      "label": "Memory with 11 files open",
+      "unit": "MB"
+    },
+    {
+      "key": "mem_md",
+      "label": "Memory with the 2 MB Markdown file",
+      "unit": "MB"
+    },
+    {
+      "key": "mem_big",
+      "label": "Memory with the 22 MB file",
+      "unit": "MB"
+    },
+    {
+      "key": "idle_cpu",
+      "label": "CPU at idle, 15 s with 11 files",
+      "unit": "ms"
+    },
+    {
+      "key": "idle_wakeups",
+      "label": "Wake-ups per second at idle",
+      "unit": "/s"
+    },
+    {
+      "key": "app_size",
+      "label": "App size",
+      "unit": "MB"
+    }
+  ],
+  "medians": {
+    "open_one_ms": {
+      "Textee": 200.2918701171875,
+      "TextMate": 1140.4310302734375,
+      "CotEditor": 839.7987060546875,
+      "Sublime Text": 576.668212890625,
+      "TextEdit": 382.5850830078125
+    },
+    "open_one_cpu": {
+      "Textee": 30.223874999999992,
+      "TextMate": 159.7684583333334,
+      "CotEditor": 346.99002083333323,
+      "Sublime Text": 108.0043541666667,
+      "TextEdit": 83.50141666666664
+    },
+    "open_ten_ms": {
+      "Textee": 274.9906005859375,
+      "TextMate": 739.8594970703125,
+      "CotEditor": 3728.763427734375,
+      "Sublime Text": 748.2645263671875,
+      "TextEdit": 834.8570556640625
+    },
+    "launch_small_window": {
+      "Textee": 1474.1339111328125,
+      "TextMate": 1828.4710693359375,
+      "CotEditor": 1783.5650634765625,
+      "Sublime Text": 1753.742919921875,
+      "TextEdit": 1266.838134765625
+    },
+    "launch_small_settle": {
+      "Textee": 1685.671875,
+      "TextMate": 2491.0457763671875,
+      "CotEditor": 2016.3526611328125,
+      "Sublime Text": 2247.1513671875,
+      "TextEdit": 1472.1317138671875
+    },
+    "launch_small_cpu": {
+      "Textee": 331.150875,
+      "TextMate": 589.85775,
+      "CotEditor": 741.2529791666666,
+      "Sublime Text": 845.1788125,
+      "TextEdit": 375.05522916666666
+    },
+    "launch_big_window": {
+      "Textee": 1609.5440673828125,
+      "TextMate": 1852.222412109375,
+      "CotEditor": 2844.3214111328125,
+      "Sublime Text": 1664.9874267578125,
+      "TextEdit": 2211.106201171875
+    },
+    "launch_big_settle": {
+      "Textee": 1891.26953125,
+      "TextMate": 3688.804443359375,
+      "CotEditor": 5180.5440673828125,
+      "Sublime Text": 2371.1409912109375,
+      "TextEdit": 2601.724609375
+    },
+    "launch_big_cpu": {
+      "Textee": 643.0746666666666,
+      "TextMate": 1884.5493541666665,
+      "CotEditor": 4828.312166666667,
+      "Sublime Text": 1255.5158958333332,
+      "TextEdit": 1365.9065624999998
+    },
+    "launch_md_settle": {
+      "Textee": 1609.472412109375,
+      "TextMate": 10315.618530273438,
+      "CotEditor": 6151.8050537109375,
+      "Sublime Text": 2302.720947265625,
+      "TextEdit": 1802.634521484375
+    },
+    "launch_md_cpu": {
+      "Textee": 366.10935416666666,
+      "TextMate": 9182.037812499999,
+      "CotEditor": 7154.470645833333,
+      "Sublime Text": 1274.7020625,
+      "TextEdit": 427.44308333333333
+    },
+    "mem_small": {
+      "Textee": 46.89158630371094,
+      "TextMate": 54.938941955566406,
+      "CotEditor": 52.7745361328125,
+      "Sublime Text": 207.9482765197754,
+      "TextEdit": 27.07897186279297
+    },
+    "mem_ten": {
+      "Textee": 49.54787063598633,
+      "TextMate": 73.17345428466797,
+      "CotEditor": 249.02481079101562,
+      "Sublime Text": 231.00310134887695,
+      "TextEdit": 62.01652908325195
+    },
+    "mem_md": {
+      "Textee": 58.250858306884766,
+      "TextMate": 182.59575271606445,
+      "CotEditor": 251.68879318237305,
+      "Sublime Text": 237.3389015197754,
+      "TextEdit": 29.008556365966797
+    },
+    "mem_big": {
+      "Textee": 174.30564880371094,
+      "TextMate": 161.5561294555664,
+      "CotEditor": 289.7589683532715,
+      "Sublime Text": 242.22194290161133,
+      "TextEdit": 193.01652908325195
+    },
+    "idle_cpu": {
+      "Textee": 11.588645833333317,
+      "TextMate": 85.85445833333341,
+      "CotEditor": 165.7140624999995,
+      "Sublime Text": 85.85141666666664,
+      "TextEdit": 521.2660416666669
+    },
+    "idle_wakeups": {
+      "Textee": 0.8,
+      "TextMate": 4.766666666666667,
+      "CotEditor": 2.4333333333333336,
+      "Sublime Text": 0.9,
+      "TextEdit": 0.4666666666666667
+    },
+    "app_size": {
+      "Textee": 0.97265625,
+      "TextMate": 37.59375,
+      "CotEditor": 122.25,
+      "Sublime Text": 111.859375,
+      "TextEdit": 1.09375
+    }
+  },
+  "raw": {
+    "Textee": [
+      {
+        "launch_small": {
+          "cpuMs": 359.3692083333333,
+          "footprintMB": 47.141563415527344,
+          "pid": 25977,
+          "settleMs": 1802.970947265625,
+          "spawnMs": 49.714111328125,
+          "threads": 7,
+          "windowMs": 1597.113037109375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 26.92225000000002,
+          "footprintMB": 48.20410919189453,
+          "settleMs": 196.81298828125,
+          "threads": 7,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 52.2539583333334,
+          "footprintMB": 49.29785919189453,
+          "settleMs": 314.920166015625,
+          "threads": 7,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 10.972166666666624,
+          "footprintMB": 36.54783630371094,
+          "threads": 5,
+          "wakeupsPerSec": 0.8
+        },
+        "launch_big": {
+          "cpuMs": 689.4519583333333,
+          "footprintMB": 167.14158630371094,
+          "pid": 26576,
+          "settleMs": 2043.09130859375,
+          "spawnMs": 54.336181640625,
+          "threads": 7,
+          "windowMs": 1769.8212890625,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 361.0685416666667,
+          "footprintMB": 57.48522186279297,
+          "pid": 26616,
+          "settleMs": 1571.77197265625,
+          "spawnMs": 57.239990234375,
+          "threads": 6,
+          "windowMs": 1476.1630859375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 379.5997916666667,
+          "footprintMB": 40.04785919189453,
+          "pid": 31698,
+          "settleMs": 2174.9482421875,
+          "spawnMs": 52.369140625,
+          "threads": 6,
+          "windowMs": 1944.294189453125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 25.997625000000028,
+          "footprintMB": 48.36035919189453,
+          "settleMs": 212.81689453125,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 49.97083333333336,
+          "footprintMB": 49.67285919189453,
+          "settleMs": 237.889404296875,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 11.663499999999999,
+          "footprintMB": 36.875938415527344,
+          "threads": 5,
+          "wakeupsPerSec": 0.8
+        },
+        "launch_big": {
+          "cpuMs": 654.3636666666666,
+          "footprintMB": 167.51660919189453,
+          "pid": 32087,
+          "settleMs": 2226.744873046875,
+          "spawnMs": 55.73291015625,
+          "threads": 8,
+          "windowMs": 1765.140869140625,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 385.2799583333333,
+          "footprintMB": 58.54772186279297,
+          "pid": 32126,
+          "settleMs": 1694.420654296875,
+          "spawnMs": 51.074951171875,
+          "threads": 6,
+          "windowMs": 1547.621826171875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 382.85908333333333,
+          "footprintMB": 47.42283630371094,
+          "pid": 34032,
+          "settleMs": 1779.092041015625,
+          "spawnMs": 43.47705078125,
+          "threads": 6,
+          "windowMs": 1684.2841796875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 82.87574999999998,
+          "footprintMB": 48.50096130371094,
+          "settleMs": 627.220947265625,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 58.776833333333286,
+          "footprintMB": 41.89158630371094,
+          "settleMs": 645.593017578125,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 10.608000000000061,
+          "footprintMB": 36.81346130371094,
+          "threads": 4,
+          "wakeupsPerSec": 0.7333333333333333
+        },
+        "launch_big": {
+          "cpuMs": 631.7856666666667,
+          "footprintMB": 168.09473419189453,
+          "pid": 34387,
+          "settleMs": 2034.366943359375,
+          "spawnMs": 51.089111328125,
+          "threads": 7,
+          "windowMs": 1574.572021484375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 372.94,
+          "footprintMB": 57.95399475097656,
+          "pid": 34427,
+          "settleMs": 1654.411865234375,
+          "spawnMs": 54.97509765625,
+          "threads": 8,
+          "windowMs": 1562.3251953125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 333.6058333333333,
+          "footprintMB": 47.64160919189453,
+          "pid": 36352,
+          "settleMs": 1546.052978515625,
+          "spawnMs": 54.735107421875,
+          "threads": 6,
+          "windowMs": 1454.903076171875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 31.728041666666684,
+          "footprintMB": 48.37598419189453,
+          "settleMs": 187.766845703125,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 50.786249999999995,
+          "footprintMB": 41.73535919189453,
+          "settleMs": 654.549072265625,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 11.513791666666634,
+          "footprintMB": 36.68848419189453,
+          "threads": 5,
+          "wakeupsPerSec": 0.8
+        },
+        "launch_big": {
+          "cpuMs": 654.367875,
+          "footprintMB": 174.78221130371094,
+          "pid": 36689,
+          "settleMs": 1748.172119140625,
+          "spawnMs": 49.0830078125,
+          "threads": 6,
+          "windowMs": 1644.51611328125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 384.55025,
+          "footprintMB": 58.67274475097656,
+          "pid": 36818,
+          "settleMs": 1564.532958984375,
+          "spawnMs": 44.342041015625,
+          "threads": 7,
+          "windowMs": 1477.520751953125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 328.6959166666667,
+          "footprintMB": 47.15721130371094,
+          "pid": 38759,
+          "settleMs": 1592.251708984375,
+          "spawnMs": 50.667724609375,
+          "threads": 6,
+          "windowMs": 1493.36474609375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 71.17075,
+          "footprintMB": 48.17283630371094,
+          "settleMs": 608.113037109375,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 57.28941666666668,
+          "footprintMB": 56.78223419189453,
+          "settleMs": 312.091796875,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 10.091916666666691,
+          "footprintMB": 36.57910919189453,
+          "threads": 5,
+          "wakeupsPerSec": 0.7333333333333333
+        },
+        "launch_big": {
+          "cpuMs": 668.397,
+          "footprintMB": 175.81343841552734,
+          "pid": 39093,
+          "settleMs": 2057.38623046875,
+          "spawnMs": 49.17236328125,
+          "threads": 7,
+          "windowMs": 1894.402099609375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 359.2787083333333,
+          "footprintMB": 57.92272186279297,
+          "pid": 39132,
+          "settleMs": 1761.988037109375,
+          "spawnMs": 51.2509765625,
+          "threads": 6,
+          "windowMs": 1535.1591796875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 311.04183333333333,
+          "footprintMB": 40.001007080078125,
+          "pid": 41229,
+          "settleMs": 1789.539794921875,
+          "spawnMs": 47.135009765625,
+          "threads": 6,
+          "windowMs": 1339.246826171875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 26.624000000000024,
+          "footprintMB": 48.266632080078125,
+          "settleMs": 187.0361328125,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 50.47795833333339,
+          "footprintMB": 49.422882080078125,
+          "settleMs": 229.80029296875,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 55.889250000000004,
+          "footprintMB": 39.57910919189453,
+          "threads": 6,
+          "wakeupsPerSec": 1.4
+        },
+        "launch_big": {
+          "cpuMs": 592.0615833333334,
+          "footprintMB": 173.96971130371094,
+          "pid": 41562,
+          "settleMs": 1406.841064453125,
+          "spawnMs": 44.840087890625,
+          "threads": 6,
+          "windowMs": 943.3701171875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 338.8583333333333,
+          "footprintMB": 58.688392639160156,
+          "pid": 41599,
+          "settleMs": 1462.554931640625,
+          "spawnMs": 43.121826171875,
+          "threads": 7,
+          "windowMs": 731.498779296875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 282.25308333333334,
+          "footprintMB": 46.62596130371094,
+          "pid": 46298,
+          "settleMs": 1017.691162109375,
+          "spawnMs": 45.947021484375,
+          "threads": 6,
+          "windowMs": 673.719970703125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 28.7197083333333,
+          "footprintMB": 47.71971130371094,
+          "settleMs": 170.742919921875,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 54.58141666666671,
+          "footprintMB": 56.25098419189453,
+          "settleMs": 225.194091796875,
+          "threads": 6,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 12.867708333333326,
+          "footprintMB": 36.04785919189453,
+          "threads": 5,
+          "wakeupsPerSec": 0.8
+        },
+        "launch_big": {
+          "cpuMs": 597.713125,
+          "footprintMB": 174.64158630371094,
+          "pid": 46712,
+          "settleMs": 1092.052734375,
+          "spawnMs": 42.186767578125,
+          "threads": 6,
+          "windowMs": 934.893798828125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 293.852,
+          "footprintMB": 57.09459686279297,
+          "pid": 46741,
+          "settleMs": 1025.613037109375,
+          "spawnMs": 44.48193359375,
+          "threads": 6,
+          "windowMs": 600.291015625,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      }
+    ],
+    "TextMate": [
+      {
+        "launch_small": {
+          "cpuMs": 594.9177916666666,
+          "footprintMB": 56.735816955566406,
+          "pid": 26652,
+          "settleMs": 2465.22509765625,
+          "spawnMs": 56.18017578125,
+          "threads": 9,
+          "windowMs": 1800.43505859375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 259.4144166666666,
+          "footprintMB": 86.78278350830078,
+          "settleMs": 1783.27294921875,
+          "threads": 23,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 138.7647916666666,
+          "footprintMB": 82.76718139648438,
+          "settleMs": 773.828125,
+          "threads": 23,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 84.32049999999981,
+          "footprintMB": 82.51718139648438,
+          "threads": 6,
+          "wakeupsPerSec": 6
+        },
+        "launch_big": {
+          "cpuMs": 1937.993,
+          "footprintMB": 164.72014617919922,
+          "pid": 27103,
+          "settleMs": 4116.9013671875,
+          "spawnMs": 57.97119140625,
+          "threads": 10,
+          "windowMs": 2388.63720703125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 9355.137333333334,
+          "footprintMB": 183.84578704833984,
+          "pid": 27170,
+          "settleMs": 10711.556884765625,
+          "spawnMs": 45.558837890625,
+          "threads": 8,
+          "windowMs": 1776.8291015625,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 611.4117916666667,
+          "footprintMB": 47.70458984375,
+          "pid": 29119,
+          "settleMs": 2450.126220703125,
+          "spawnMs": 55.26513671875,
+          "threads": 10,
+          "windowMs": 1785.840087890625,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 162.46058333333337,
+          "footprintMB": 74.59532928466797,
+          "settleMs": 1107.93798828125,
+          "threads": 22,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 173.45612500000004,
+          "footprintMB": 79.79847717285156,
+          "settleMs": 3007.133056640625,
+          "threads": 22,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 85.19158333333348,
+          "footprintMB": 79.73597717285156,
+          "threads": 6,
+          "wakeupsPerSec": 4.666666666666667
+        },
+        "launch_big": {
+          "cpuMs": 1899.9830833333333,
+          "footprintMB": 156.78289794921875,
+          "pid": 29586,
+          "settleMs": 3837.46484375,
+          "spawnMs": 57.705810546875,
+          "threads": 10,
+          "windowMs": 2013.222900390625,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 9455.146583333333,
+          "footprintMB": 182.93960571289062,
+          "pid": 29647,
+          "settleMs": 10765.57177734375,
+          "spawnMs": 55.011962890625,
+          "threads": 7,
+          "windowMs": 1697.391845703125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 584.8902916666666,
+          "footprintMB": 56.204566955566406,
+          "pid": 34552,
+          "settleMs": 2531.96533203125,
+          "spawnMs": 48.655029296875,
+          "threads": 10,
+          "windowMs": 1871.10205078125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 180.28758333333326,
+          "footprintMB": 68.48588562011719,
+          "settleMs": 1220.819091796875,
+          "threads": 22,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 145.63991666666664,
+          "footprintMB": 72.48593139648438,
+          "settleMs": 757.28076171875,
+          "threads": 23,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 86.51733333333334,
+          "footprintMB": 72.00155639648438,
+          "threads": 6,
+          "wakeupsPerSec": 5.533333333333333
+        },
+        "launch_big": {
+          "cpuMs": 1904.2270833333332,
+          "footprintMB": 160.15771484375,
+          "pid": 34906,
+          "settleMs": 4061.0048828125,
+          "spawnMs": 64.426025390625,
+          "threads": 10,
+          "windowMs": 2066.294921875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 9467.95625,
+          "footprintMB": 185.59574127197266,
+          "pid": 34961,
+          "settleMs": 11050.570068359375,
+          "spawnMs": 44.139892578125,
+          "threads": 8,
+          "windowMs": 1989.507080078125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 622.5239583333333,
+          "footprintMB": 55.81403350830078,
+          "pid": 36856,
+          "settleMs": 3038.040771484375,
+          "spawnMs": 49.943115234375,
+          "threads": 9,
+          "windowMs": 2241.856201171875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 196.23783333333324,
+          "footprintMB": 71.12662506103516,
+          "settleMs": 2439.20166015625,
+          "threads": 22,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 147.44799999999998,
+          "footprintMB": 77.48602294921875,
+          "settleMs": 739.531982421875,
+          "threads": 23,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 88.82212500000014,
+          "footprintMB": 77.18914794921875,
+          "threads": 6,
+          "wakeupsPerSec": 5.933333333333334
+        },
+        "launch_big": {
+          "cpuMs": 1939.5745,
+          "footprintMB": 162.9545440673828,
+          "pid": 37242,
+          "settleMs": 3540.14404296875,
+          "spawnMs": 59.027099609375,
+          "threads": 10,
+          "windowMs": 1822.481201171875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 8941.492708333333,
+          "footprintMB": 180.31446838378906,
+          "pid": 37380,
+          "settleMs": 9877.901123046875,
+          "spawnMs": 50.18408203125,
+          "threads": 8,
+          "windowMs": 1338.586669921875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 594.8252083333334,
+          "footprintMB": 55.57958984375,
+          "pid": 39229,
+          "settleMs": 2829.43701171875,
+          "spawnMs": 48.81494140625,
+          "threads": 10,
+          "windowMs": 2150.427001953125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 157.07633333333342,
+          "footprintMB": 76.43901062011719,
+          "settleMs": 1155.027099609375,
+          "threads": 22,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 153.0633333333334,
+          "footprintMB": 73.86097717285156,
+          "settleMs": 740.18701171875,
+          "threads": 22,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 88.08558333333337,
+          "footprintMB": 73.42347717285156,
+          "threads": 6,
+          "wakeupsPerSec": 4.866666666666666
+        },
+        "launch_big": {
+          "cpuMs": 1869.115625,
+          "footprintMB": 168.62639617919922,
+          "pid": 39625,
+          "settleMs": 3904.524658203125,
+          "spawnMs": 59.961669921875,
+          "threads": 10,
+          "windowMs": 1881.963623046875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 9422.582916666666,
+          "footprintMB": 184.64263916015625,
+          "pid": 39686,
+          "settleMs": 10753.3359375,
+          "spawnMs": 59.1201171875,
+          "threads": 8,
+          "windowMs": 1700.07421875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 466.482625,
+          "footprintMB": 53.53253173828125,
+          "pid": 41633,
+          "settleMs": 1003.97802734375,
+          "spawnMs": 44.10400390625,
+          "threads": 11,
+          "windowMs": 718.400146484375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 153.60729166666664,
+          "footprintMB": 55.87632751464844,
+          "settleMs": 1125.8349609375,
+          "threads": 11,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 132.8664583333334,
+          "footprintMB": 57.59507751464844,
+          "settleMs": 638.77490234375,
+          "threads": 11,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 34.09241666666662,
+          "footprintMB": 46.92327117919922,
+          "threads": 6,
+          "wakeupsPerSec": 1.2666666666666666
+        },
+        "launch_big": {
+          "cpuMs": 1740.3754166666668,
+          "footprintMB": 147.8608627319336,
+          "pid": 42074,
+          "settleMs": 2562.00732421875,
+          "spawnMs": 48.917236328125,
+          "threads": 11,
+          "windowMs": 888.080078125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 7569.424041666667,
+          "footprintMB": 180.90821838378906,
+          "pid": 42116,
+          "settleMs": 8257.765869140625,
+          "spawnMs": 55.973876953125,
+          "threads": 8,
+          "windowMs": 1114.986083984375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 465.5359166666667,
+          "footprintMB": 54.29829406738281,
+          "pid": 43946,
+          "settleMs": 1143.27001953125,
+          "spawnMs": 44.023193359375,
+          "threads": 9,
+          "windowMs": 843.279052734375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 151.99858333333327,
+          "footprintMB": 63.23579406738281,
+          "settleMs": 715.176025390625,
+          "threads": 9,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 136.3605,
+          "footprintMB": 56.73579406738281,
+          "settleMs": 660.236328125,
+          "threads": 9,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 9.603208333333214,
+          "footprintMB": 44.37641906738281,
+          "threads": 4,
+          "wakeupsPerSec": 0.8666666666666667
+        },
+        "launch_big": {
+          "cpuMs": 1753.7657083333334,
+          "footprintMB": 166.32949829101562,
+          "pid": 44405,
+          "settleMs": 2454.86279296875,
+          "spawnMs": 44.316650390625,
+          "threads": 10,
+          "windowMs": 790.0517578125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 7266.149916666667,
+          "footprintMB": 182.25189971923828,
+          "pid": 44439,
+          "settleMs": 7680.59716796875,
+          "spawnMs": 49.373046875,
+          "threads": 8,
+          "windowMs": 766.68408203125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      }
+    ],
+    "CotEditor": [
+      {
+        "launch_small": {
+          "cpuMs": 756.7360833333333,
+          "footprintMB": 52.204246520996094,
+          "pid": 27382,
+          "settleMs": 2266.60986328125,
+          "spawnMs": 62.03515625,
+          "threads": 12,
+          "windowMs": 2001.81103515625,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 341.62604166666665,
+          "footprintMB": 108.64188385009766,
+          "settleMs": 679.3818359375,
+          "threads": 12,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 2586.6362916666667,
+          "footprintMB": 245.70452117919922,
+          "settleMs": 3281.140625,
+          "threads": 19,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 150.1738750000004,
+          "footprintMB": 250.6576690673828,
+          "threads": 7,
+          "wakeupsPerSec": 2.4
+        },
+        "launch_big": {
+          "cpuMs": 4757.05525,
+          "footprintMB": 290.9699401855469,
+          "pid": 27843,
+          "settleMs": 4754.2021484375,
+          "spawnMs": 58.530029296875,
+          "threads": 12,
+          "windowMs": 2540.200927734375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 7075.273416666667,
+          "footprintMB": 251.64186096191406,
+          "pid": 27924,
+          "settleMs": 6232.40673828125,
+          "spawnMs": 59.3740234375,
+          "threads": 26,
+          "windowMs": 1984.69189453125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 831.9364583333333,
+          "footprintMB": 53.157371520996094,
+          "pid": 29865,
+          "settleMs": 2625.903076171875,
+          "spawnMs": 54.383056640625,
+          "threads": 15,
+          "windowMs": 2408.93505859375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 355.0219166666667,
+          "footprintMB": 109.22000885009766,
+          "settleMs": 1506.333984375,
+          "threads": 15,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 2818.3285,
+          "footprintMB": 240.6889419555664,
+          "settleMs": 4879.765869140625,
+          "threads": 15,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 144.65712499999972,
+          "footprintMB": 242.5639419555664,
+          "threads": 6,
+          "wakeupsPerSec": 1.8
+        },
+        "launch_big": {
+          "cpuMs": 4861.701833333333,
+          "footprintMB": 289.7198944091797,
+          "pid": 30346,
+          "settleMs": 5184.75390625,
+          "spawnMs": 64.514892578125,
+          "threads": 15,
+          "windowMs": 2853.27490234375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 7272.462416666667,
+          "footprintMB": 251.67315673828125,
+          "pid": 30442,
+          "settleMs": 6110.964111328125,
+          "spawnMs": 52.298095703125,
+          "threads": 23,
+          "windowMs": 1830.705810546875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 738.4919166666666,
+          "footprintMB": 52.07926940917969,
+          "pid": 32164,
+          "settleMs": 1902.212158203125,
+          "spawnMs": 58.521240234375,
+          "threads": 12,
+          "windowMs": 1665.2822265625,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 340.62262499999986,
+          "footprintMB": 100.67313385009766,
+          "settleMs": 644.426025390625,
+          "threads": 12,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 2775.2414583333334,
+          "footprintMB": 266.42333984375,
+          "settleMs": 4283.583984375,
+          "threads": 18,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 161.12895833333278,
+          "footprintMB": 256.1732482910156,
+          "threads": 7,
+          "wakeupsPerSec": 2.3333333333333335
+        },
+        "launch_big": {
+          "cpuMs": 4911.829,
+          "footprintMB": 290.2667922973633,
+          "pid": 32639,
+          "settleMs": 5187.8427734375,
+          "spawnMs": 61.0458984375,
+          "threads": 12,
+          "windowMs": 2835.367919921875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 7220.383458333333,
+          "footprintMB": 251.61067962646484,
+          "pid": 32718,
+          "settleMs": 6548.3115234375,
+          "spawnMs": 50.8466796875,
+          "threads": 25,
+          "windowMs": 2463.6767578125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 744.0140416666666,
+          "footprintMB": 52.7979736328125,
+          "pid": 37500,
+          "settleMs": 2130.4931640625,
+          "spawnMs": 60.488037109375,
+          "threads": 13,
+          "windowMs": 1901.847900390625,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 333.7243749999998,
+          "footprintMB": 101.61063385009766,
+          "settleMs": 846.320068359375,
+          "threads": 13,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 2526.9269583333335,
+          "footprintMB": 245.39199829101562,
+          "settleMs": 3110.604248046875,
+          "threads": 19,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 181.5709999999999,
+          "footprintMB": 249.54827117919922,
+          "threads": 7,
+          "wakeupsPerSec": 2.533333333333333
+        },
+        "launch_big": {
+          "cpuMs": 4794.9225,
+          "footprintMB": 289.7980422973633,
+          "pid": 37989,
+          "settleMs": 5295.170654296875,
+          "spawnMs": 63.21875,
+          "threads": 12,
+          "windowMs": 3040.448486328125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 7172.868291666667,
+          "footprintMB": 245.09498596191406,
+          "pid": 38063,
+          "settleMs": 6263.252197265625,
+          "spawnMs": 52.151123046875,
+          "threads": 27,
+          "windowMs": 2131.301025390625,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 772.3889166666667,
+          "footprintMB": 52.7510986328125,
+          "pid": 39910,
+          "settleMs": 2706.81298828125,
+          "spawnMs": 56.808837890625,
+          "threads": 13,
+          "windowMs": 2515.85986328125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 350.5424999999998,
+          "footprintMB": 101.40748596191406,
+          "settleMs": 833.27734375,
+          "threads": 13,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 2665.907166666667,
+          "footprintMB": 252.65762329101562,
+          "settleMs": 3173.94287109375,
+          "threads": 17,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 171.97037500000033,
+          "footprintMB": 257.0482482910156,
+          "threads": 7,
+          "wakeupsPerSec": 2.533333333333333
+        },
+        "launch_big": {
+          "cpuMs": 4938.825791666667,
+          "footprintMB": 290.1574172973633,
+          "pid": 40397,
+          "settleMs": 5176.334228515625,
+          "spawnMs": 56.534423828125,
+          "threads": 13,
+          "windowMs": 2895.339111328125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 7136.073,
+          "footprintMB": 251.70442962646484,
+          "pid": 40472,
+          "settleMs": 6192.64599609375,
+          "spawnMs": 51.390869140625,
+          "threads": 25,
+          "windowMs": 1899.09375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 656.7469166666666,
+          "footprintMB": 59.422996520996094,
+          "pid": 42309,
+          "settleMs": 1291.277099609375,
+          "spawnMs": 49.07421875,
+          "threads": 13,
+          "windowMs": 1047.52734375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 343.4375416666667,
+          "footprintMB": 108.68875885009766,
+          "settleMs": 692.573974609375,
+          "threads": 13,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 2362.842041666667,
+          "footprintMB": 238.7357940673828,
+          "settleMs": 2890.754150390625,
+          "threads": 19,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 170.29916666666622,
+          "footprintMB": 243.5483169555664,
+          "threads": 7,
+          "wakeupsPerSec": 2.8
+        },
+        "launch_big": {
+          "cpuMs": 4549.462625,
+          "footprintMB": 283.26683807373047,
+          "pid": 42678,
+          "settleMs": 3936.114013671875,
+          "spawnMs": 47.152099609375,
+          "threads": 14,
+          "windowMs": 1805.93505859375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 7127.610333333333,
+          "footprintMB": 251.98565673828125,
+          "pid": 42829,
+          "settleMs": 5155.964111328125,
+          "spawnMs": 50.025146484375,
+          "threads": 28,
+          "windowMs": 1133.7470703125,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 714.7192083333334,
+          "footprintMB": 52.313621520996094,
+          "pid": 44629,
+          "settleMs": 1552.235107421875,
+          "spawnMs": 52.081298828125,
+          "threads": 12,
+          "windowMs": 1308.6591796875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 881.2473750000001,
+          "footprintMB": 134.20447540283203,
+          "settleMs": 1350.636962890625,
+          "threads": 22,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 2577.6729166666673,
+          "footprintMB": 264.7827835083008,
+          "settleMs": 4793.01904296875,
+          "threads": 16,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 133.8583749999998,
+          "footprintMB": 265.23583984375,
+          "threads": 6,
+          "wakeupsPerSec": 2
+        },
+        "launch_big": {
+          "cpuMs": 4405.131083333333,
+          "footprintMB": 282.59498596191406,
+          "pid": 45124,
+          "settleMs": 3825.680419921875,
+          "spawnMs": 46.536376953125,
+          "threads": 14,
+          "windowMs": 1710.2841796875,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 7037.997166666667,
+          "footprintMB": 251.90753173828125,
+          "pid": 45179,
+          "settleMs": 4965.22607421875,
+          "spawnMs": 46.865966796875,
+          "threads": 27,
+          "windowMs": 1021.52099609375,
+          "windows": [
+            [
+              1920,
+              1080
+            ]
+          ]
+        }
+      }
+    ],
+    "Sublime Text": [
+      {
+        "launch_small": {
+          "cpuMs": 834.3230833333333,
+          "footprintMB": 204.11244201660156,
+          "pid": 28026,
+          "settleMs": 2024.185791015625,
+          "spawnMs": 54.78564453125,
+          "threads": 28,
+          "windowMs": 1569.23291015625,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 100.66266666666672,
+          "footprintMB": 208.81561279296875,
+          "settleMs": 479.583984375,
+          "threads": 28,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 371.14291666666657,
+          "footprintMB": 222.7532958984375,
+          "settleMs": 1447.959228515625,
+          "threads": 29,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 84.35891666666657,
+          "footprintMB": 216.2688980102539,
+          "threads": 27,
+          "wakeupsPerSec": 1
+        },
+        "launch_big": {
+          "cpuMs": 1253.996125,
+          "footprintMB": 234.42471313476562,
+          "pid": 28470,
+          "settleMs": 2390.046142578125,
+          "spawnMs": 58.444091796875,
+          "threads": 30,
+          "windowMs": 1666.026123046875,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 1287.080125,
+          "footprintMB": 248.58126068115234,
+          "pid": 28531,
+          "settleMs": 2445.0263671875,
+          "spawnMs": 52.593017578125,
+          "threads": 28,
+          "windowMs": 1845.34814453125,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 882.9905416666667,
+          "footprintMB": 209.70619201660156,
+          "pid": 30621,
+          "settleMs": 2258.94775390625,
+          "spawnMs": 50.931884765625,
+          "threads": 28,
+          "windowMs": 1817.78564453125,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 112.49658333333343,
+          "footprintMB": 213.39373779296875,
+          "settleMs": 525.65087890625,
+          "threads": 28,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 136.3988750000001,
+          "footprintMB": 235.98753356933594,
+          "settleMs": 479.671142578125,
+          "threads": 29,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 93.0504166666667,
+          "footprintMB": 205.31563568115234,
+          "threads": 27,
+          "wakeupsPerSec": 0.9333333333333333
+        },
+        "launch_big": {
+          "cpuMs": 1254.3125833333334,
+          "footprintMB": 243.58132934570312,
+          "pid": 30991,
+          "settleMs": 2608.22607421875,
+          "spawnMs": 56.435791015625,
+          "threads": 28,
+          "windowMs": 2013.72314453125,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 1282.66775,
+          "footprintMB": 245.31568145751953,
+          "pid": 31057,
+          "settleMs": 2390.556884765625,
+          "spawnMs": 42.48486328125,
+          "threads": 28,
+          "windowMs": 1737.4560546875,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 852.3820416666667,
+          "footprintMB": 206.50313568115234,
+          "pid": 32892,
+          "settleMs": 2235.35498046875,
+          "spawnMs": 51.9169921875,
+          "threads": 27,
+          "windowMs": 1734.806884765625,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 96.66604166666662,
+          "footprintMB": 206.34693145751953,
+          "settleMs": 517.961181640625,
+          "threads": 27,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 126.32612500000005,
+          "footprintMB": 241.8001480102539,
+          "settleMs": 481.224853515625,
+          "threads": 29,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 79.43112500000007,
+          "footprintMB": 201.3001251220703,
+          "threads": 27,
+          "wakeupsPerSec": 0.8
+        },
+        "launch_big": {
+          "cpuMs": 1263.1739583333335,
+          "footprintMB": 240.86255645751953,
+          "pid": 33266,
+          "settleMs": 2388.926025390625,
+          "spawnMs": 53.78271484375,
+          "threads": 28,
+          "windowMs": 1682.60986328125,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 1266.736375,
+          "footprintMB": 239.1904525756836,
+          "pid": 33422,
+          "settleMs": 2214.885009765625,
+          "spawnMs": 46.51806640625,
+          "threads": 28,
+          "windowMs": 1637.860107421875,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 837.9755833333334,
+          "footprintMB": 210.64371490478516,
+          "pid": 35185,
+          "settleMs": 2366.141845703125,
+          "spawnMs": 62.0537109375,
+          "threads": 28,
+          "windowMs": 1772.678955078125,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 93.08695833333343,
+          "footprintMB": 209.61248779296875,
+          "settleMs": 597.171875,
+          "threads": 28,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 151.77758333333327,
+          "footprintMB": 232.95632934570312,
+          "settleMs": 736.22705078125,
+          "threads": 29,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 95.90491666666662,
+          "footprintMB": 201.69068145751953,
+          "threads": 26,
+          "wakeupsPerSec": 0.8
+        },
+        "launch_big": {
+          "cpuMs": 1256.7192083333332,
+          "footprintMB": 245.8782501220703,
+          "pid": 35638,
+          "settleMs": 2459.6357421875,
+          "spawnMs": 51.494873046875,
+          "threads": 28,
+          "windowMs": 1701.204833984375,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 1307.1026249999998,
+          "footprintMB": 240.92494201660156,
+          "pid": 35699,
+          "settleMs": 2601.447021484375,
+          "spawnMs": 49.662109375,
+          "threads": 28,
+          "windowMs": 1982.658203125,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 891.6975833333332,
+          "footprintMB": 209.03436279296875,
+          "pid": 40646,
+          "settleMs": 2560.445068359375,
+          "spawnMs": 55.94287109375,
+          "threads": 27,
+          "windowMs": 1968.4169921875,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 105.85779166666669,
+          "footprintMB": 205.14373779296875,
+          "settleMs": 556.16455078125,
+          "threads": 27,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 380.0431249999999,
+          "footprintMB": 219.0188980102539,
+          "settleMs": 1252.738037109375,
+          "threads": 28,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 92.27170833333321,
+          "footprintMB": 205.6751251220703,
+          "threads": 27,
+          "wakeupsPerSec": 0.9333333333333333
+        },
+        "launch_big": {
+          "cpuMs": 1266.0883333333334,
+          "footprintMB": 256.08119201660156,
+          "pid": 41011,
+          "settleMs": 2353.35595703125,
+          "spawnMs": 58.125,
+          "threads": 28,
+          "windowMs": 1647.364990234375,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 1299.8775833333334,
+          "footprintMB": 235.4873504638672,
+          "pid": 41076,
+          "settleMs": 2654.288818359375,
+          "spawnMs": 43.186767578125,
+          "threads": 28,
+          "windowMs": 2069.787841796875,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 786.0443333333333,
+          "footprintMB": 193.9560546875,
+          "pid": 42910,
+          "settleMs": 1351.537353515625,
+          "spawnMs": 44.01708984375,
+          "threads": 29,
+          "windowMs": 836.865234375,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 271.0787499999999,
+          "footprintMB": 210.76862335205078,
+          "settleMs": 1165.987060546875,
+          "threads": 30,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 139.1634583333332,
+          "footprintMB": 229.04987335205078,
+          "settleMs": 946.31396484375,
+          "threads": 30,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 17.67591666666658,
+          "footprintMB": 197.5811004638672,
+          "threads": 28,
+          "wakeupsPerSec": 0.8666666666666667
+        },
+        "launch_big": {
+          "cpuMs": 1153.97675,
+          "footprintMB": 236.51880645751953,
+          "pid": 43358,
+          "settleMs": 1387.425048828125,
+          "spawnMs": 48.867431640625,
+          "threads": 29,
+          "windowMs": 869.78125,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 1164.0613333333333,
+          "footprintMB": 212.56520080566406,
+          "pid": 43406,
+          "settleMs": 1263.18798828125,
+          "spawnMs": 41.416748046875,
+          "threads": 28,
+          "windowMs": 746.85595703125,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 788.4703333333333,
+          "footprintMB": 206.86219024658203,
+          "pid": 45252,
+          "settleMs": 1379.075927734375,
+          "spawnMs": 47.85986328125,
+          "threads": 28,
+          "windowMs": 978.60498046875,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 110.15091666666672,
+          "footprintMB": 191.9716339111328,
+          "settleMs": 702.071044921875,
+          "threads": 28,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 172.81254166666645,
+          "footprintMB": 221.23744201660156,
+          "settleMs": 760.302001953125,
+          "threads": 29,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 15.770666666666557,
+          "footprintMB": 188.33116912841797,
+          "threads": 27,
+          "wakeupsPerSec": 0.9333333333333333
+        },
+        "launch_big": {
+          "cpuMs": 1121.3232916666666,
+          "footprintMB": 229.62774658203125,
+          "pid": 45700,
+          "settleMs": 1197.598876953125,
+          "spawnMs": 40.89794921875,
+          "threads": 28,
+          "windowMs": 665.831787109375,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 1158.2685416666666,
+          "footprintMB": 216.2060089111328,
+          "pid": 45743,
+          "settleMs": 1163.205078125,
+          "spawnMs": 36.037109375,
+          "threads": 28,
+          "windowMs": 607.72216796875,
+          "windows": [
+            [
+              1920,
+              1049
+            ],
+            [
+              500,
+              191
+            ]
+          ]
+        }
+      }
+    ],
+    "TextEdit": [
+      {
+        "launch_small": {
+          "cpuMs": 434.7052083333333,
+          "footprintMB": 27.71959686279297,
+          "pid": 28597,
+          "settleMs": 1745.718994140625,
+          "spawnMs": 52.676025390625,
+          "threads": 13,
+          "windowMs": 1690.51220703125,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 67.4879166666667,
+          "footprintMB": 31.46959686279297,
+          "settleMs": 552.238037109375,
+          "threads": 13,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 627.8331666666667,
+          "footprintMB": 65.87589263916016,
+          "settleMs": 1743.53173828125,
+          "threads": 17,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 540.7264166666666,
+          "footprintMB": 73.75089263916016,
+          "threads": 6,
+          "wakeupsPerSec": 0.4
+        },
+        "launch_big": {
+          "cpuMs": 1357.3933333333332,
+          "footprintMB": 192.70404052734375,
+          "pid": 29042,
+          "settleMs": 2582.285888671875,
+          "spawnMs": 52.369873046875,
+          "threads": 14,
+          "windowMs": 2223.57373046875,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 443.436625,
+          "footprintMB": 29.235107421875,
+          "pid": 29084,
+          "settleMs": 1679.110107421875,
+          "spawnMs": 55.59521484375,
+          "threads": 14,
+          "windowMs": 1463.14013671875,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 428.1114583333333,
+          "footprintMB": 27.766448974609375,
+          "pid": 31194,
+          "settleMs": 1709.8291015625,
+          "spawnMs": 62.87890625,
+          "threads": 16,
+          "windowMs": 1442.525146484375,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 129.78770833333328,
+          "footprintMB": 31.672698974609375,
+          "settleMs": 1255.287109375,
+          "threads": 16,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 631.7095416666666,
+          "footprintMB": 65.84464263916016,
+          "settleMs": 1614.7919921875,
+          "threads": 17,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 542.8507500000001,
+          "footprintMB": 73.64149475097656,
+          "threads": 6,
+          "wakeupsPerSec": 0.4666666666666667
+        },
+        "launch_big": {
+          "cpuMs": 1383.7497083333333,
+          "footprintMB": 194.17279052734375,
+          "pid": 31569,
+          "settleMs": 2792.304931640625,
+          "spawnMs": 56.55712890625,
+          "threads": 13,
+          "windowMs": 2308.683837890625,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 434.5779166666667,
+          "footprintMB": 29.032005310058594,
+          "pid": 31613,
+          "settleMs": 1615.173828125,
+          "spawnMs": 52.317138671875,
+          "threads": 12,
+          "windowMs": 1375.98388671875,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 378.86025,
+          "footprintMB": 26.89147186279297,
+          "pid": 33479,
+          "settleMs": 1584.086181640625,
+          "spawnMs": 55.968994140625,
+          "threads": 12,
+          "windowMs": 1341.947021484375,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 81.79987499999999,
+          "footprintMB": 30.70397186279297,
+          "settleMs": 424.76806640625,
+          "threads": 12,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 640.1981249999999,
+          "footprintMB": 65.40716552734375,
+          "settleMs": 1698.84814453125,
+          "threads": 23,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 523.1972916666668,
+          "footprintMB": 73.18839263916016,
+          "threads": 7,
+          "wakeupsPerSec": 0.4666666666666667
+        },
+        "launch_big": {
+          "cpuMs": 1378.2511666666667,
+          "footprintMB": 193.37589263916016,
+          "pid": 33849,
+          "settleMs": 2803.760986328125,
+          "spawnMs": 57.711181640625,
+          "threads": 13,
+          "windowMs": 2460.8759765625,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 474.6753333333333,
+          "footprintMB": 29.344482421875,
+          "pid": 33994,
+          "settleMs": 2225.465087890625,
+          "spawnMs": 46.5732421875,
+          "threads": 13,
+          "windowMs": 1722.338134765625,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 371.2502083333333,
+          "footprintMB": 27.26647186279297,
+          "pid": 35764,
+          "settleMs": 1360.17724609375,
+          "spawnMs": 47.691162109375,
+          "threads": 14,
+          "windowMs": 1191.729248046875,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 64.41991666666672,
+          "footprintMB": 31.09459686279297,
+          "settleMs": 344.6162109375,
+          "threads": 14,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 565.781375,
+          "footprintMB": 62.000892639160156,
+          "settleMs": 924.9189453125,
+          "threads": 16,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 528.3749166666664,
+          "footprintMB": 73.40714263916016,
+          "threads": 6,
+          "wakeupsPerSec": 0.4
+        },
+        "launch_big": {
+          "cpuMs": 1384.6515833333333,
+          "footprintMB": 192.59466552734375,
+          "pid": 36191,
+          "settleMs": 2691.2890625,
+          "spawnMs": 56.296875,
+          "threads": 13,
+          "windowMs": 2299.06005859375,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 420.30825,
+          "footprintMB": 28.985107421875,
+          "pid": 36311,
+          "settleMs": 1992.166259765625,
+          "spawnMs": 52.1171875,
+          "threads": 14,
+          "windowMs": 1333.97412109375,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 464.1061666666667,
+          "footprintMB": 27.26647186279297,
+          "pid": 38246,
+          "settleMs": 1794.337890625,
+          "spawnMs": 50.034912109375,
+          "threads": 13,
+          "windowMs": 1563.77099609375,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 85.62454166666663,
+          "footprintMB": 31.047744750976562,
+          "settleMs": 420.553955078125,
+          "threads": 13,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 491.74608333333333,
+          "footprintMB": 62.03216552734375,
+          "settleMs": 744.795166015625,
+          "threads": 16,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 519.3347916666669,
+          "footprintMB": 73.57904052734375,
+          "threads": 7,
+          "wakeupsPerSec": 0.4666666666666667
+        },
+        "launch_big": {
+          "cpuMs": 1353.5619583333332,
+          "footprintMB": 192.86031341552734,
+          "pid": 38590,
+          "settleMs": 2512.16015625,
+          "spawnMs": 57.688232421875,
+          "threads": 14,
+          "windowMs": 2123.15234375,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 461.2320833333333,
+          "footprintMB": 29.297607421875,
+          "pid": 38629,
+          "settleMs": 1990.09521484375,
+          "spawnMs": 55.454345703125,
+          "threads": 13,
+          "windowMs": 1420.231201171875,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 326.8305416666667,
+          "footprintMB": 26.750823974609375,
+          "pid": 43456,
+          "settleMs": 968.045654296875,
+          "spawnMs": 46.02197265625,
+          "threads": 14,
+          "windowMs": 617.15478515625,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 78.5933333333333,
+          "footprintMB": 30.625823974609375,
+          "settleMs": 305.668701171875,
+          "threads": 14,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 471.05525,
+          "footprintMB": 61.46959686279297,
+          "settleMs": 604.180908203125,
+          "threads": 16,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 468.77712499999996,
+          "footprintMB": 73.00089263916016,
+          "threads": 6,
+          "wakeupsPerSec": 0.4666666666666667
+        },
+        "launch_big": {
+          "cpuMs": 1324.818,
+          "footprintMB": 193.00089263916016,
+          "pid": 43788,
+          "settleMs": 2143.614990234375,
+          "spawnMs": 51.6669921875,
+          "threads": 13,
+          "windowMs": 1443.248046875,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 354.18054166666667,
+          "footprintMB": 28.360084533691406,
+          "pid": 43887,
+          "settleMs": 921.669921875,
+          "spawnMs": 47.100830078125,
+          "threads": 12,
+          "windowMs": 746.86572265625,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        }
+      },
+      {
+        "launch_small": {
+          "cpuMs": 321.9897916666667,
+          "footprintMB": 26.71959686279297,
+          "pid": 45793,
+          "settleMs": 769.726318359375,
+          "spawnMs": 40.477294921875,
+          "threads": 14,
+          "windowMs": 610.239990234375,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_one": {
+          "cpuMs": 85.2029583333333,
+          "footprintMB": 30.578994750976562,
+          "settleMs": 309.993896484375,
+          "threads": 14,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "open_ten": {
+          "cpuMs": 484.73037500000004,
+          "footprintMB": 61.297767639160156,
+          "settleMs": 587.728759765625,
+          "threads": 17,
+          "windows": [
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ],
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "idle": {
+          "cpuMs": 495.45979166666655,
+          "footprintMB": 72.93843841552734,
+          "threads": 6,
+          "wakeupsPerSec": 0.4666666666666667
+        },
+        "launch_big": {
+          "cpuMs": 1283.2677083333333,
+          "footprintMB": 193.03216552734375,
+          "pid": 46217,
+          "settleMs": 1893.3828125,
+          "spawnMs": 44.135009765625,
+          "threads": 14,
+          "windowMs": 1322.35205078125,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        },
+        "launch_md": {
+          "cpuMs": 351.678875,
+          "footprintMB": 28.610084533691406,
+          "pid": 46263,
+          "settleMs": 1066.458251953125,
+          "spawnMs": 42.671142578125,
+          "threads": 13,
+          "windowMs": 680.338134765625,
+          "windows": [
+            [
+              1918,
+              1076
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}

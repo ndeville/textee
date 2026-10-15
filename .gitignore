@@ -1,0 +1,9 @@
+build.noindex/
+Textee.xcodeproj/
+__pycache__/
+.DS_Store
+output/*/build/mini
+
+# Private, never pushed: signing identity, personal notes
+.private/
+CLAUDE.local.md

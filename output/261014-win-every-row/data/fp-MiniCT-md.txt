@@ -1,0 +1,45 @@
+======================================================================
+MiniCT [35955]: 64-bit    Footprint: 28 MB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  17 MB        0 B          0 B         27    MALLOC_SMALL
+3952 KB        0 B      3824 KB         35    IOSurface
+1632 KB        0 B          0 B        866    __DATA_DIRTY
+1568 KB        0 B          0 B         11    MALLOC metadata
+ 860 KB        0 B          0 B        958    __DATA
+ 529 KB        0 B          0 B          1    page table
+ 352 KB    8752 KB          0 B         25    mapped file
+ 352 KB        0 B          0 B         23    untagged (VM_ALLOCATE)
+ 320 KB        0 B          0 B          1    MALLOC_TINY
+ 288 KB        0 B          0 B         12    stack
+ 246 KB        0 B          0 B       2518    unused dyld shared cache area
+ 222 KB        0 B          0 B        624    __AUTH
+ 128 KB        0 B          0 B          1    Accelerate image backing stores
+ 112 KB        0 B          0 B       1009    __AUTH_CONST
+ 112 KB        0 B          0 B          2    __TPRO_CONST
+  96 KB        0 B          0 B          2    CoreUI image data
+  80 KB        0 B          0 B          5    CoreGraphics
+  64 KB        0 B          0 B          2    IOAccelerator
+  48 KB        0 B          0 B          3    CoreAnimation
+  48 KB        0 B          0 B          3    IOKit
+  32 KB      16 KB          0 B       1016    __DATA_CONST
+  32 KB        0 B          0 B          1    Activity Tracing
+  16 KB        0 B          0 B          1    MALLOC_NANO
+  16 KB        0 B          0 B          1    IOAccelerator (graphics)
+  16 KB        0 B          0 B          1    tag 22
+  16 KB        0 B          0 B          1    os_alloc_once
+  16 KB        0 B          0 B          1    Foundation
+  16 KB        0 B          0 B          1    ColorSync
+    0 B     512 KB          0 B       1038    __TEXT
+    0 B      64 KB          0 B          5    __LINKEDIT
+    0 B        0 B          0 B          1    __FONT_DATA
+    0 B        0 B          0 B          1    __CTF
+    ---        ---          ---        ---    ---
+  28 MB    9344 KB      3824 KB       8198    TOTAL
+
+Auxiliary data:
+    phys_footprint: 28 MB
+    phys_footprint_peak: 31 MB
+
