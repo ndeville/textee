@@ -8,6 +8,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         Profile.mark("willFinishLaunching")
+        SquareWindows.install()
         NSApp.appearance = NSAppearance(named: .darkAqua)
         // The full menu bar costs 25 to 80 ms: it's built after the window is on screen.
         NSApp.mainMenu = MenuBuilder.launchMenu()
