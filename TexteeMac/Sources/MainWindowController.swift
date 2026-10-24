@@ -509,6 +509,7 @@ final class MainWindowController: NSWindowController, NSWindowDelegate {
     func updateTabTitles() {
         tabBar.titles = documents.map { ($0.name, ($0.url.path as NSString).abbreviatingWithTildeInPath, $0.isDirty) }
         tabBar.active = activeIndex
+        LiveState.publish()
     }
 
     func updateChrome() {

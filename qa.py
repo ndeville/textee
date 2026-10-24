@@ -17,6 +17,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 from pathlib import Path
 
@@ -474,6 +475,126 @@ def suites() -> dict:
     return s
 
 
+FAKE_OPEN = r"""#!/usr/bin/env python3
+# Stands in for /usr/bin/open in the cli suite: answers a textee:// URL the way the app does, in live.json.
+import json, os, sys, urllib.parse
+url = urllib.parse.urlparse(sys.argv[-1])
+rid = urllib.parse.parse_qs(url.query).get("rid", [""])[0]
+live = os.path.join(os.environ["TEXTEE_HOME"], "live.json")
+with open(live, encoding="utf-8") as f:
+    state = json.load(f)
+state["last_action"] = {"name": url.netloc, "rid": rid, "ok": os.environ.get("FAKE_OK", "1") == "1"}
+if url.netloc == "save-all":
+    for t in state["tabs"]:
+        t["unsaved"] = False
+with open(live + ".tmp", "w", encoding="utf-8") as f:
+    json.dump(state, f)
+os.replace(live + ".tmp", live)
+"""
+
+
+def suite_cli() -> tuple:
+    """The agent interface contract (~/ai/.claude/skills/appee/references/agent-interface.md) on a scratch home.
+
+    Never sends a textee:// URL: LaunchServices would hand it to Nic's running Textee. Writes run against a
+    fake `open` (TEXTEE_OPEN_TOOL) and the app's own echo runs through the QA harness `url` op.
+    """
+    import re
+    passed = failed = 0
+
+    def ok(cond, label):
+        nonlocal passed, failed
+        passed += bool(cond)
+        failed += not cond
+        print(f"  {'✅' if cond else '❌'} {label}")
+
+    home, txt = QA / "cli-home", QA / "cli-txt"
+    for d in (home, txt):
+        shutil.rmtree(d, ignore_errors=True)
+        d.mkdir(parents=True)
+    for i, name in enumerate(("251001-090000.txt", "251002-090000.txt", "251003-090000.txt")):
+        (txt / name).write_text(f"scratch {i}\n", encoding="utf-8")
+        os.utime(txt / name, (1_760_000_000 + i * 60, 1_760_000_000 + i * 60))
+    fake = QA / "fake-open.py"
+    fake.write_text(FAKE_OPEN, encoding="utf-8")
+    fake.chmod(0o755)
+    cli = [sys.executable, str(ROOT / "textee.py")]
+    env = dict(os.environ, TEXTEE_HOME=str(home), TEXTEE_TXT_DIR=str(txt), TEXTEE_OPEN_TOOL=str(fake))
+
+    def j(args: list, e: dict = env):
+        r = subprocess.run(cli + args + ["--json"], env=e, capture_output=True, text=True)
+        try:
+            return r.returncode, json.loads(r.stdout)
+        except json.JSONDecodeError:
+            return r.returncode, None
+
+    rc, d = j(["describe"])
+    names = {x["name"] for x in (d or {}).get("commands", [])}
+    helptext = subprocess.run(cli + ["--help"], capture_output=True, text=True).stdout
+    parsed = set(re.search(r"\{([a-z,\-]+)\}", helptext).group(1).split(","))
+    ok(rc == 0 and d and d["app"] == "textee", "describe --json")
+    ok(names == parsed, f"describe lists every subcommand ({sorted(parsed - names)} missing)")
+    ok(d and all(x["effect"] in ("read", "write", "destructive") for x in d["commands"]), "each command has an effect")
+    rc, s = j(["status"])
+    ok(rc == 0 and s and s["running"] is False and s["pid"] is None and s["tabs"] is None, "status --json without the app")
+    ok(s and s["newest_scratch"] == str(txt / "251003-090000.txt"), "status gives the newest scratch file")
+    rc, s = j(["scratches", "-n", "2"])
+    ok(rc == 0 and s and len(s["files"]) == 2 and s["more"] is True, "scratches -n 2 --json is bounded")
+    rc, s = j(["tabs"])
+    ok(rc == 4 and s and s["ok"] is False, "tabs without the app exits 4")
+    rc, s = j(["new"])
+    ok(rc == 4 and s and s["ok"] is False, "a write without the app exits 4")
+    rc, s = j(["open", str(txt / "missing.txt")])
+    ok(rc == 1 and s and s["ok"] is False, "open refuses a missing file")
+    r = subprocess.run(cli + ["no-such-command", "--json"], env=env, capture_output=True, text=True)
+    ok(r.returncode == 2, "an unknown command is a usage error")
+
+    # A live state with this process as the app: the CLI's half of a confirmed write.
+    live = home / "live.json"
+    live.write_text(json.dumps({"pid": os.getpid(), "version": "qa", "tabs": [
+        {"path": str(txt / "251003-090000.txt"), "unsaved": True, "conflict": False, "active": True},
+        {"path": str(txt / "251002-090000.txt"), "unsaved": False, "conflict": True, "active": False}],
+        "active_path": str(txt / "251003-090000.txt")}), encoding="utf-8")
+    rc, s = j(["status"])
+    ok(rc == 0 and s and s["running"] and s["tabs"] == 2 and s["unsaved"] == 1 and s["conflicts"] == 1, "status --json reads live.json")
+    rc, s = j(["tabs", "-n", "1"])
+    ok(rc == 0 and s and s["count"] == 2 and len(s["tabs"]) == 1 and s["more"] is True, "tabs -n 1 --json is bounded")
+    rc, s = j(["save-all"])
+    ok(rc == 0 and s and s["confirmed"] and s["unsaved"] == 0, "save-all --json is confirmed and changes status")
+    rc, s = j(["new"], dict(env, FAKE_OK="0"))
+    ok(rc == 1 and s and s["ok"] is False, "an action the app reports as failed exits 1")
+    live.write_text(json.dumps({"pid": 999_999, "tabs": []}), encoding="utf-8")
+    rc, s = j(["status"])
+    ok(rc == 0 and s and s["running"] is False, "a dead pid in live.json means not running")
+
+    # The app's half: the running QA instance publishes live.json and echoes a request id.
+    live.unlink()
+    steps = [{"op": "open", "path": f("plain.txt")}, {"op": "open", "path": f("edit.txt")},
+             {"op": "url", "url": "textee://new?rid=qarid1"}, {"op": "wait", "wait": 4.0}]
+    t = threading.Thread(target=run_suite, args=("cli-app", steps), kwargs={"home": home, "txt": txt})
+    t.start()
+    s, state = None, {}
+    for _ in range(100):
+        time.sleep(0.1)
+        rc, s = j(["status"])
+        try:
+            state = json.loads(live.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            state = {}
+        if s and s.get("running") and s.get("tabs") == 3 and (state.get("last_action") or {}).get("rid") == "qarid1":
+            break
+    ok(s and s["running"] and s["pid"] and s["tabs"] == 3, "status --json reads the running app's live.json")
+    last = state.get("last_action") or {}
+    ok(last.get("rid") == "qarid1" and last.get("ok") is True and last.get("name") == "new", "the app echoes the request id")
+    ok(str(state.get("active_path", "")).startswith(str(txt.resolve())), "the new scratch is the active tab")
+    rc, s2 = j(["tabs"])
+    ok(rc == 0 and s2 and s2["count"] == 3, "tabs --json lists the running app's tabs")
+    t.join()
+    rc, s = j(["status"])
+    ok(s and s["running"] is False, "status --json after the app quit")
+    return passed, failed
+
+
 def launch_baseline(runs: int = 3) -> float:
     """Median launch-to-first-display of an empty AppKit app bundle, opened like Textee (`open -g -n -W`)."""
     app = ROOT / "build.noindex" / "LaunchBaseline.app"
@@ -498,7 +619,7 @@ def launch_baseline(runs: int = 3) -> float:
     return sorted(times)[len(times) // 2]
 
 
-def run_suite(name: str, steps: list) -> list:
+def run_suite(name: str, steps: list, home: Path = HOME, txt: Path = TXT) -> list:
     script = QA / f"{name}.json"
     script.write_text(json.dumps(steps, ensure_ascii=False), encoding="utf-8")
     out = OUT / name
@@ -507,8 +628,8 @@ def run_suite(name: str, steps: list) -> list:
     env = {
         "TEXTEE_QA": str(script),
         "TEXTEE_QA_OUT": str(out),
-        "TEXTEE_HOME": str(HOME),
-        "TEXTEE_TXT_DIR": str(TXT),
+        "TEXTEE_HOME": str(home),
+        "TEXTEE_TXT_DIR": str(txt),
         "TEXTEE_PASTEBOARD": "com.nicolasdeville.textee.qa",
     }
     args = ["open", "-g", "-n", "-W"]
@@ -535,13 +656,18 @@ def main() -> None:
         sys.exit("❌ build first: ./build.sh")
     build_fixtures()
     all_suites = suites()
-    names = [args.only] if args.only else list(all_suites)
+    names = [args.only] if args.only else list(all_suites) + ["cli"]
     passed = failed = 0
     timings: dict[str, list[float]] = {}
     started = time.time()
     deltas: list[float] = []
     for name in names:
         print(f"\n▶ {name}")
+        if name == "cli":
+            p, fl = suite_cli()
+            passed += p
+            failed += fl
+            continue
         base = launch_baseline(runs=1)
         results = run_suite(name, all_suites[name])
         launches = [r["ms"] for r in results if r["op"] == "launch"]

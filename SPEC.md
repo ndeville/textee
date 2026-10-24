@@ -145,6 +145,17 @@ Menu titles are the standard ones (Copy, Paste, Find…), so Nic's global App Sh
 - **Default app** for `public.plain-text` and `.txt`: set with `duti`, confirmed by Nic in the macOS prompt (checked 12th October 2026: `duti -d public.plain-text` gives `com.nicolasdeville.textee`).
 - TextMate stays installed. Not changed: Hammerspoon (`MONITOR_APPS`, the TextMate character-count overlay) and Amethyst's float list.
 
+### 6.1 Agent interface (24th October 2026)
+
+Textee follows the appee agent interface contract (`~/ai/.claude/skills/appee/references/agent-interface.md`), so NicAI can use it inside a task:
+
+- `textee.py` (Python standard library, Python 3.9), linked at `~/.local/bin/textee`. Every command takes `--json`: 1 JSON document on stdout, `ok`, and `error` plus `hint` on failure. Exit codes: 1 error, 2 usage, 3 refused, 4 the app isn't running.
+- `textee describe --json` lists every command with its effect. `textee status --json` gives `running`, `pid`, `version`, `tabs`, `unsaved`, `conflicts` and `newest_scratch`.
+- The app writes `~/.textee/live.json` (atomic, on a background queue, coalesced per run-loop turn) at launch, on every tab change and after every URL action. `state.json` keeps the recent files and view settings, so the live state has its own file. `TEXTEE_READONLY=1` skips it.
+- New URL actions `textee://save-all` and `textee://show`. Each URL takes a request id (`rid`) that the app echoes in `last_action`, so a write command reports `confirmed: true` only after the app ran it. A URL with `rid` doesn't activate Textee unless it has `show=1`; URLs without `rid` (Alfred `ca`) behave as before.
+- CLI commands: `status`, `tabs`, `scratches`, `new`, `new-from-clipboard`, `open`, `save-all`, `show`.
+- `qa.py --only cli` tests the contract (20 checks), including `status` against a running QA instance. It never sends a real `textee://` URL, because LaunchServices would hand it to the running Textee.
+
 ## 7. Measured (QA, 12th October 2026)
 
 `python3 qa.py`: 7 suites, 193 checks, all passed. The Mac's load average was about 15 during the runs, so launch is measured against an empty AppKit app launched just before each suite.

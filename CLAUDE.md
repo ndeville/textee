@@ -15,8 +15,10 @@ TexteeMac/Sources/   AppKit app, 1 file per area:
   TextBuffer         LineIndex (line starts + words per line), Counter, TextFile (load in 1 MB pieces, save), DiskStamp
   Bars               TabBar, StatusBar, EmptyView
   FindBar, QuickOpen, State (paths, state.json), Theme (Blackboard + blue chrome)
+  LiveState          live.json for `textee status`: pid, tabs, unsaved, the last URL action (agent interface)
   Settings           settings.json (windowCorners, cornerRadius), reloaded on save; WindowCorners, AppWindow, AppPanel
   QAHarness          JSON-scripted QA (TEXTEE_QA), Clip (pasteboard), Profile (launch marks)
+textee.py            The agent CLI (Python standard library, runs on Python 3.9)
 project.yml          XcodeGen project. The .xcodeproj is generated: don't edit it.
 qa.py                End-to-end QA on fixture copies in $TMPDIR/textee-qa
 bench.py, bench/     Textee vs TextMate, CotEditor, Sublime Text, TextEdit from outside (appprobe.swift); bench/results.json
@@ -42,6 +44,20 @@ python3 screenshots.py   # README screenshots, about 5 s
 
 Public repo: github.com/ndeville/textee (MIT). `.private/` (signing identity) and `CLAUDE.local.md` are git-ignored. Commit and push after each change that passes QA. `bench.py` rewrites `bench/results.json` even with `--only`: restore it before a commit unless the run is meant to replace the published numbers.
 
+## Agent interface
+
+Agents (Claude Code, NicAI CC tasks) drive Textee through the `textee` CLI (`textee.py`, linked at `~/.local/bin/textee` by `build.sh --install`). Every command takes `--json` and prints 1 JSON document; errors carry `ok: false`, `error` and `hint`, with exit codes 1 (error), 2 (usage), 3 (refused) and 4 (Textee isn't running). Writes go through `textee://` URLs opened in the background with a request id, and the CLI confirms each one through `~/.textee/live.json`, which the app rewrites on every tab change. A URL with a request id doesn't bring Textee to the front unless the command has `--show`.
+
+```bash
+textee describe --json             # every command, with its effect (read or write)
+textee status --json               # running, tabs, unsaved, conflicts, newest_scratch
+textee tabs --json                 # the open tabs: path, unsaved, conflict, active
+textee scratches -n 5 --json       # the 5 newest scratch files in ~/txt
+textee new-from-clipboard --json   # the clipboard in a new scratch tab, confirmed, with its path
+textee open ~/txt/notes.txt --json # open a file in a tab, in the background
+textee save-all --json             # save every unsaved tab (before a quit or an install)
+```
+
 ## Safety rules
 
 - QA never touches `~/txt`, `~/.textee` or the clipboard: qa.py sets `TEXTEE_TXT_DIR`, `TEXTEE_HOME` and `TEXTEE_PASTEBOARD` to fixtures and a private pasteboard.
@@ -60,6 +76,7 @@ Public repo: github.com/ndeville/textee (MIT). `.private/` (signing identity) an
 | `TEXTEE_QA`           | Path to a QA script (JSON steps); see QAHarness        |
 | `TEXTEE_QA_OUT`       | QA report, screenshots and launch profile folder       |
 | `TEXTEE_QA_KEEP_OPEN` | `1` keeps Textee open after the QA script              |
+| `TEXTEE_OPEN_TOOL`    | `textee` CLI: the `open` command (QA uses a fake)      |
 
 ## AppKit lessons (don't undo these)
 

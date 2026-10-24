@@ -19,6 +19,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         Profile.mark("didFinishLaunching")
         launched = true
+        LiveState.controller = controller
         let urls = pendingURLs
         pendingURLs = []
         for u in urls { route(u) }
@@ -26,6 +27,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         // No session restore, no new document at launch (as TextMate was set up). The window shows empty.
         if controller.documents.isEmpty { controller.showWindow() }
         Profile.mark("window shown")
+        LiveState.publish()
         if let qa = ProcessInfo.processInfo.environment["TEXTEE_QA"] {
             MenuBuilder.installFullMenu()
             Settings.watch()
@@ -63,7 +65,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         if launched { route(url) } else { pendingURLs.append(url) }
     }
 
-    /// File URLs open in a tab. `textee://new-from-clipboard`, `textee://new`, `textee://open?path=...`.
+    /// File URLs open in a tab. `textee://new-from-clipboard`, `textee://new`, `textee://open?path=...`,
+    /// `textee://quick-open`, `textee://save-all`, `textee://show`.
+    /// Agent interface: a URL with a request id (`rid`) is echoed in live.json, and it doesn't bring Textee to the
+    /// front unless it also has `show=1` (`textee` CLI, `open -g`). URLs without `rid` (Alfred `ca`) activate as before.
     func route(_ url: URL) {
         if url.isFileURL {
             // No activation here: LaunchServices brings Textee to the front for a file it opens. Activating once
@@ -71,18 +76,28 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             controller.open(url)
             return
         }
+        var front = true
         if url.scheme == "textee" {
-            switch url.host ?? url.path {
-            case "new-from-clipboard": controller.newFromClipboard(nil)
-            case "new": controller.newScratch(nil)
+            let q = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems ?? []
+            let rid = q.first(where: { $0.name == "rid" })?.value
+            if rid != nil { front = q.contains { $0.name == "show" && $0.value == "1" } }
+            let action = url.host ?? url.path
+            var ok = true
+            switch action {
+            case "new-from-clipboard": ok = controller.createScratch(text: Clip.string ?? "") != nil
+            case "new": ok = controller.createScratch(text: "") != nil
             case "quick-open": controller.showQuickOpen(nil)
+            case "save-all": controller.saveAll()
+            case "show": front = true
             case "open":
-                if let path = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.first(where: { $0.name == "path" })?.value {
-                    controller.open(URL(fileURLWithPath: (path as NSString).expandingTildeInPath))
-                }
-            default: break
+                if let path = q.first(where: { $0.name == "path" })?.value {
+                    ok = controller.open(URL(fileURLWithPath: (path as NSString).expandingTildeInPath)) != nil
+                } else { ok = false }
+            default: ok = false
             }
+            if rid != nil { LiveState.record(action: action, rid: rid, ok: ok) }
         }
+        guard front else { return }
         // `ca` from Alfred: Textee must come to the front with the new tab.
         if ProcessInfo.processInfo.environment["TEXTEE_QA"] == nil { NSApp.activate() }
         controller.window?.makeKeyAndOrderFront(nil)

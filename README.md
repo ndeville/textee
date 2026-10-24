@@ -173,6 +173,20 @@ The full list is in `SPEC.md` section 5.
 
 Square window corners use `_cornerMask`, a private AppKit method. If a later macOS stops calling it, the window stays rounded and nothing else breaks.
 
+## Agent interface
+
+Agents (Claude Code, NicAI CC tasks) drive Textee through the `textee` CLI (`textee.py`; `build.sh --install` links it at `~/.local/bin/textee`). Every command takes `--json` and prints 1 JSON document; errors carry `ok: false`, `error` and `hint`, with exit codes 1 (error), 2 (usage), 3 (refused) and 4 (Textee isn't running). Writes go through `textee://` URLs opened in the background with a request id, and the CLI confirms each one through `~/.textee/live.json`, which the app rewrites on every tab change. A URL with a request id doesn't bring Textee to the front unless the command has `--show`.
+
+```bash
+textee describe --json             # every command, with its effect (read or write)
+textee status --json               # running, tabs, unsaved, conflicts, newest_scratch
+textee tabs --json                 # the open tabs: path, unsaved, conflict, active
+textee scratches -n 5 --json       # the 5 newest scratch files in ~/txt
+textee new-from-clipboard --json   # the clipboard in a new scratch tab, confirmed, with its path
+textee open ~/txt/notes.txt --json # open a file in a tab, in the background
+textee save-all --json             # save every unsaved tab (before a quit or an install)
+```
+
 ## Develop
 
 `SPEC.md` is the specification, with every measurement. `CLAUDE.md` holds the layout, the rules and the AppKit lessons, for you and for Claude Code.

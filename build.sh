@@ -75,6 +75,8 @@ if $INSTALL; then
   cp -R build.noindex/Textee.app /Applications/Textee.app
   $LSREGISTER -f /Applications/Textee.app
   echo "✅ installed /Applications/Textee.app"
+  # The agent CLI on the PATH (agent interface).
+  mkdir -p ~/.local/bin && ln -sf "$PWD/textee.py" ~/.local/bin/textee
 fi
 
 size=$(du -sh build.noindex/Textee.app | cut -f1)
