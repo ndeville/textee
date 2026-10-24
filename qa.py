@@ -587,6 +587,7 @@ def suite_cli() -> tuple:
     last = state.get("last_action") or {}
     ok(last.get("rid") == "qarid1" and last.get("ok") is True and last.get("name") == "new", "the app echoes the request id")
     ok(str(state.get("active_path", "")).startswith(str(txt.resolve())), "the new scratch is the active tab")
+    ok(str(state.get("bundle_path", "")).endswith("Textee.app"), "live.json names the app copy, for open -a")
     rc, s2 = j(["tabs"])
     ok(rc == 0 and s2 and s2["count"] == 3, "tabs --json lists the running app's tabs")
     t.join()

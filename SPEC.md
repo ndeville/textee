@@ -154,7 +154,7 @@ Textee follows the appee agent interface contract (`~/ai/.claude/skills/appee/re
 - The app writes `~/.textee/live.json` (atomic, on a background queue, coalesced per run-loop turn) at launch, on every tab change and after every URL action. `state.json` keeps the recent files and view settings, so the live state has its own file. `TEXTEE_READONLY=1` skips it.
 - New URL actions `textee://save-all` and `textee://show`. Each URL takes a request id (`rid`) that the app echoes in `last_action`, so a write command reports `confirmed: true` only after the app ran it. A URL with `rid` doesn't activate Textee unless it has `show=1`; URLs without `rid` (Alfred `ca`) behave as before.
 - CLI commands: `status`, `tabs`, `scratches`, `new`, `new-from-clipboard`, `open`, `save-all`, `show`.
-- `qa.py --only cli` tests the contract (20 checks), including `status` against a running QA instance. It never sends a real `textee://` URL, because LaunchServices would hand it to the running Textee.
+- `qa.py --only cli` tests the contract (21 checks), including `status` against a running QA instance. It never sends a real `textee://` URL, because LaunchServices would hand it to the running Textee.
 
 ## 7. Measured (QA, 12th October 2026)
 

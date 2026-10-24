@@ -42,6 +42,7 @@ enum LiveState {
             "pid": Int(getpid()),
             "version": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "",
             "started_at": iso(startedAt),
+            "bundle_path": Bundle.main.bundlePath,
             "updated_at": iso(Date()),
             "tabs": docs.map { ["path": $0.url.path, "unsaved": $0.isDirty, "conflict": $0.conflict, "active": $0 === active] },
             "active_path": active.map { $0.url.path as Any } ?? NSNull(),

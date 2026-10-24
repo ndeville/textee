@@ -127,7 +127,9 @@ def send(action: str, params: dict | None = None, wait: float = 3.0) -> dict:
         return {"ok": False, "error": "Textee isn't running", "hint": "Start it: open -a Textee", "code": 4}
     rid = uuid.uuid4().hex[:12]
     query = urllib.parse.urlencode({**(params or {}), "rid": rid})
-    if subprocess.run([OPEN_TOOL, "-g", f"textee://{action}?{query}"]).returncode != 0:
+    # -a the running copy: a QA or build copy of Textee may also claim textee:// in LaunchServices.
+    target = ["-a", live["bundle_path"]] if live.get("bundle_path") else []
+    if subprocess.run([OPEN_TOOL, "-g", *target, f"textee://{action}?{query}"]).returncode != 0:
         return {"ok": False, "error": f"open textee://{action} failed", "hint": "", "code": 1}
     deadline = time.time() + wait
     while time.time() < deadline:
