@@ -94,7 +94,7 @@ The status bar shows the count in green up to 300 (fits an invitation note) and 
 | Shell      | `.sh`, `.zsh`, `.bash`, `.command`, rc files, a shebang    | Keywords, builtins, strings, variables, comments               |
 | Plain text | Everything else                                            | Nothing                                                        |
 
-Files over 5 MB are never coloured.
+Files over 5 MB are never coloured. On a very long line, such as a minified JSON file, Textee colours only the text near the window. Typing in the 2.6 MB line of `min.json` (QA) takes about 350 ms per key with or without colours: TextKit 1 lays out the whole paragraph again. Opening, scrolling and reading it are fast (426 ms, 12 ms a page).
 
 ### 4.4 Quick open (`⌘P`, also `⌘H`)
 
@@ -143,6 +143,7 @@ Menu titles are the standard ones (Copy, Paste, Find…), so Nic's global App Sh
 
 - **Alfred `ca`**: the Clipee Text workflow now runs `open 'textee://new-from-clipboard'`. Backup: `~/ai/me/kb/261012-alfred-clipee-text-backup.plist`.
 - **Default app** for `public.plain-text` and `.txt`: set with `duti`, confirmed by Nic in the macOS prompt (checked 12th October 2026: `duti -d public.plain-text` gives `com.nicolasdeville.textee`).
+- **Default app for JSON** (`public.json`, 31st October 2026): set with `duti -s com.nicolasdeville.textee public.json all`, replacing VS Code. It applies once Nic confirms the macOS prompt.
 - TextMate stays installed. Not changed: Hammerspoon (`MONITOR_APPS`, the TextMate character-count overlay) and Amethyst's float list.
 
 ### 6.1 Agent interface (24th October 2026)

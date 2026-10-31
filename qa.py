@@ -141,6 +141,15 @@ done
 """
 
 
+def minified_json() -> str:
+    """About 2.6 MB of JSON on 1 line, as an API dump: the case that crashed the colouring (31st October 2026)."""
+    rows = [{"id": i, "name": f"item {i}", "price": i * 0.25, "tags": ["a", "b"], "ok": i % 2 == 0, "note": None}
+            for i in range(30000)]
+    rows[15000]["middle_key"] = 1
+    rows[-1]["last_key"] = True
+    return json.dumps(rows, separators=(",", ":"))
+
+
 def build_fixtures() -> None:
     """Fresh copies of everything QA touches."""
     if QA.exists():
@@ -151,6 +160,7 @@ def build_fixtures() -> None:
     subprocess.run(["cp", "-cRp", str(REAL_TXT), str(TXT)], check=True)
     (FILES / "sample.md").write_text(MARKDOWN, encoding="utf-8")
     (FILES / "sample.json").write_text(JSON_TEXT, encoding="utf-8")
+    (FILES / "min.json").write_text(minified_json(), encoding="utf-8")
     (FILES / "sample.yaml").write_text(YAML_TEXT, encoding="utf-8")
     (FILES / "sample.py").write_text(PY_TEXT, encoding="utf-8")
     (FILES / "sample.sh").write_text(SH_TEXT, encoding="utf-8")
@@ -446,6 +456,16 @@ def suites() -> dict:
     for i in range(10):
         perf.append({"op": "open", "path": f(f"tab{i}.txt")})
     perf.append({"op": "memory", "label": "memory 10 tabs + 22 MB + 2 MB", "wait": 0.5})
+    # After the memory check, so that number stays comparable with SPEC.md section 7.
+    perf += [
+        {"op": "open", "path": f("min.json"), "label": "open 2.6 MB minified JSON"},
+        {"op": "assertDoc", "language": "JSON"},
+        {"op": "assertColor", "text": "\"name\"", "equals": "8DA6CE", "label": "minified JSON: key coloured"},
+        {"op": "assertColor", "text": "\"middle_key\"", "equals": "F8F8F8", "label": "minified JSON: only near the window"},
+        {"op": "scrollToEnd", "label": "jump to end of minified JSON"},
+        {"op": "assertColor", "text": "\"last_key\"", "equals": "8DA6CE", "label": "minified JSON: colours at the end"},
+        {"op": "scroll", "pages": 5, "label": "scroll minified JSON"},
+    ]
     s["perf"] = perf
 
     # settings.json is saved while Textee runs: corners and radius change at once, the selection stays.
@@ -636,7 +656,8 @@ def run_suite(name: str, steps: list, home: Path = HOME, txt: Path = TXT) -> lis
     args = ["open", "-g", "-n", "-W"]
     for k, v in env.items():
         args += ["--env", f"{k}={v}"]
-    args.append(str(APP))
+    # After a crash, AppKit asks whether to reopen the windows, and the modal prompt blocks QA until the timeout.
+    args += [str(APP), "--args", "-ApplePersistenceIgnoreState", "YES"]
     try:
         subprocess.run(args, check=True, timeout=180)
     except subprocess.TimeoutExpired:

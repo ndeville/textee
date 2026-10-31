@@ -242,7 +242,25 @@ final class EditorView: NSView, NSTextViewDelegate {
         return lm.characterRange(forGlyphRange: glyphs, actualGlyphRange: nil)
     }
 
+    private var colouring = false
+    private var recolourQueued = false
+
+    /// Adding colours can make AppKit lay out more text, resize the text view and post a frame change, which
+    /// lands here again inside `apply` (a minified JSON file crashed on it, 31st October 2026). The nested
+    /// call waits for the next run-loop turn instead.
     func highlightVisible() {
+        guard !colouring else {
+            if !recolourQueued {
+                recolourQueued = true
+                DispatchQueue.main.async { [weak self] in
+                    self?.recolourQueued = false
+                    self?.highlightVisible()
+                }
+            }
+            return
+        }
+        colouring = true
+        defer { colouring = false }
         guard let hl = document.highlighter, let lm = textView.layoutManager else { return }
         let vis = visibleCharacterRange()
         let s = textView.string as NSString

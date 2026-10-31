@@ -597,13 +597,17 @@ final class Highlighter {
         }
         let start = lines.starts[first]
         let endLine = lines.range(ofLine: last, in: s)
-        let whole = NSRange(location: start, length: NSMaxRange(endLine) - start)
+        // Colour only inside `visible`: a minified JSON file is 1 line of several MB, and its tokens outside
+        // the window would cost 100,000s of attributes on every scroll. The lexer still reads whole lines.
+        let whole = NSIntersectionRange(NSRange(location: start, length: NSMaxRange(endLine) - start), visible)
         lm.removeTemporaryAttribute(.foregroundColor, forCharacterRange: whole)
         for i in first...last {
             let lineStart = lines.starts[i]
             let next = lexLine(i, s, lines) { st, len, tok in
                 guard len > 0, tok != .plain else { return }
-                lm.addTemporaryAttribute(.foregroundColor, value: Theme.color(tok), forCharacterRange: NSRange(location: lineStart + st, length: len))
+                let r = NSIntersectionRange(NSRange(location: lineStart + st, length: len), whole)
+                guard r.length > 0 else { return }
+                lm.addTemporaryAttribute(.foregroundColor, value: Theme.color(tok), forCharacterRange: r)
             }
             if i + 1 == states.count {
                 states.append(next)
